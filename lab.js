@@ -5,9 +5,11 @@
 */
 
 //Code here
-
-
-
+let me = {
+  name: "Nate",
+  age: 27
+}
+console.log(me);
 //////////////////////////// PROBLEM 2 ////////////////////////////
 
 //Create an object saved to the variable dog.
@@ -16,22 +18,25 @@
 //and goodBoy (a boolean).
 
 //Code here
+let dog = {
+  name: "Fido",
+  color: "Blue",
+  age: 4, 
+  goodBoy: true, 
+} 
 
-
-
+console.log(dog);
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
-
-
+console.log(dog.name)
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 //Code here
-
-
+console.log(dog["color"])
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -40,14 +45,21 @@
 */
 
 //Code here
-
+let favoriteThings = {
+  band: "Wardruna",
+  food: "Barbecue",
+  person: "MY WIFE",
+  book: "Stormlight Archive",
+  movie: "STAR WARS... IDK",
+  holiday: "Halloween"
+}
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 */
 
 //Code here
-
+favoriteThings.car = "Nissan GTR"
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
@@ -55,9 +67,10 @@
 */
 
 //Code here
+favoriteThings["food"] = "Chicken Nuggets";
+favoriteThings["book"] = "Harry Potter";
 
-
-
+console.log(favoriteThings);
 //////////////////////////// PROBLEM 6 ////////////////////////////
 // Do not edit the code below.
 var user = {
@@ -77,16 +90,19 @@ var user = {
 */
 
 //Code Here
+user.name = 'Bryan G. Smith'
+user.email = 'bryan.smith@devmounta.in'
 
-
+console.log(user)
 //////////////////////////// PROBLEM 7 ////////////////////////////
 /*
   Using the user object above, delete the users age off of the object.
 */
 
 //Code Here
+delete user.age
 
-
+console.log(user)
 //////////////////////////// PROBLEM 8 ////////////////////////////
 /*
   Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
@@ -95,8 +111,15 @@ var user = {
 */
 
 //Code here
-
-
+class Cat {
+ constructor(name, age, color){
+  this.name = name
+  this.age = age
+  this.color = color
+ }
+}
+let cat1 = new Cat("Kitty", 8, "Tabby");
+console.log(cat1)
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 /*
