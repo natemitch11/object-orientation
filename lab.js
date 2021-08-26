@@ -167,7 +167,23 @@ wizzy.castSpell()
 */
 
 //Code Here
-
+class Phone {
+  constructor(brand, model, storage, color, price, sold){
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false
+  }
+  sell(){
+    this.sold = true;
+    console.log(`${this.brand} ${this.model} has been sold`)
+  }
+  changePrice(newPrice){
+    this.price = newPrice;
+  }
+}
   
 /*
     Next make three new phone instances using your class.
@@ -180,7 +196,9 @@ wizzy.castSpell()
 */
 
 //Code Here
-
+let phone1 = new Phone("Samsung", "Galaxy S 20", "64gb", "Slate Gray", 799.99)
+let phone2 = new Phone("iPhone", "12", "128gb", "PURPLE", 1098899.99)
+let phone3 = new Phone("Nokia", "N8", "2 gb", "World Dominator Blue", 7.99)
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
@@ -189,8 +207,8 @@ wizzy.castSpell()
 */ 
 
 //Code Here 
-
-
+phone3.changePrice(8.99)
+console.log(phone3)
 /*
   Now call the sell method on one of your other phone objects
 
@@ -198,7 +216,7 @@ wizzy.castSpell()
 */
 
 //Code Here 
-
+phone1.sell()
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 
@@ -218,7 +236,10 @@ const colors = {
 //do not edit this object
 
 //Code Here 
-
+let colorsCopy = {
+  ... colors
+}
+console.log(colorsCopy)
 
 
 /*
@@ -246,8 +267,11 @@ const shippingInfo = {
 //do not edit the objects above
 
 //Code Here
-
-
+const helensInfo = {
+  ...contactInfo,
+  ...shippingInfo
+}
+console.log(helensInfo)
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
 
@@ -264,14 +288,25 @@ const shippingInfo = {
 */
 
 //Code Here 
-
+class Vehicle {
+  constructor(capacity, color, mileage){
+    this.capacity = capacity;
+    this.color = color;
+    this.mileage = mileage;
+  }
+  move(miles){
+    this.mileage += miles;
+    console.log(`Your Vehicle's mileage is now ${this.mileage}`);
+  }
+}
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
 //Code Here
-
+let myFirstVehicle = new Vehicle(5, "Black", 70000);
+myFirstVehicle.move(10000)
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
@@ -283,17 +318,27 @@ const shippingInfo = {
 */
 
 //Code Here
-
+class Motorcycle extends Vehicle {
+  constructor(capacity, color, mileage, make, isCool){
+    super(capacity, color, mileage)
+  this.make = make
+  this.isCool = isCool
+  }
+  move(miles){
+    super.move(miles)
+    console.log("Been out riding some more huh? bet you think you're pretty cool")
+  }
+}
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
 //Code Here 
-
+let myFirstMotorcycle = new Motorcycle(2,"Red", 15000, "Suzuki", true)
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
-
+myFirstMotorcycle.move(5000)
 /*
   Let's make another class based off of Vehicle. 
 
@@ -310,29 +355,46 @@ const shippingInfo = {
 */
 
 //Code Here
-
-
+class Boat extends Vehicle {
+  constructor(capacity, color, mileage, name, type, isSeaworthy){
+    super(capacity, color, mileage)
+    this.name = name;
+    this.type = type;
+    this.isSeaworthy = false
+  }
+  checkSeaworthiness(){
+    if (this.isSeaworthy === true){
+      console.log(`The ${this.color} ${this.type} boat ${this.name} is seaworthy!`)
+    } else {
+      console.log(`You need to get your ${this.type} boat in shape!`)
+    }
+  }
+  performMaintenance(){
+    this.isSeaworthy = true;
+  }
+}
 /*
   Create a new boat using your class. You can choose whatever values you like for all the 
   properties except isSeaworthy -- make that one false. Call your variable myFirstBoat.
 */
 
 //Code Here
-
+let myFirstBoat = new Boat(9,"Red", 1500, "The Wendigo", "Fishing");
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
 //Code Here
-
+myFirstBoat.checkSeaworthiness()
 /*
   Now run the performMaintenance method on your boat
 */
 
 //Code Here 
-
+myFirstBoat.performMaintenance()
 /*
   Check the seaworthiness once more (you should be ready for the water!)
 */
 
 //Code Here
+myFirstBoat.checkSeaworthiness()
